@@ -1,0 +1,26 @@
+input{
+  border: none;
+  border-bottom: 2px solid #000;
+  outline: none;
+  font-family: 'Times New Roman', Times, serif;
+  transition: outline 0.1 ease;
+}
+
+input:focus{
+  outline: 2px solid rgb(0, 216, 198);
+}
+
+
+.button-visible{
+  position: absolute;
+  right: 0;
+  top: 40%;
+  transform: translateY(-50%);
+  border: none;
+  border-bottom: 2px solid #000;
+}
+
+.button-visible:has(i):hover{
+  cursor: pointer;
+  background-color: transparent;
+}
