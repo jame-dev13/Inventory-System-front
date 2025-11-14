@@ -1,0 +1,54 @@
+:root{
+    --color-fav: rgb(255, 0, 43);
+}
+html {
+    scroll-behavior: smooth;
+}
+
+main{
+    padding-top: 7rem;
+}
+
+/* Cada <li> debe controlar su propio contexto */
+.nav-item {
+    position: relative;
+    overflow: hidden;  /* evita que el efecto se salga */
+}
+
+/* Efecto del hover en el fondo */
+.nav-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 12px;
+    transition: width 0.25s ease-in-out;
+    z-index: -1;   /* debajo del texto, encima del fondo */
+}
+
+/* Al pasar el mouse */
+.nav-item:hover::after {
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 100%;
+}
+
+
+/* Cuando esté activo */
+.nav-item .nav-link.active {
+    font-weight: bold;
+    color: var(--color-fav) !important;
+}
+
+
+.linkTo{
+    min-width: 10%;
+    max-width: 25%;
+}
+
+img{
+    min-width: 150px;
+    min-height: 50px;
+}

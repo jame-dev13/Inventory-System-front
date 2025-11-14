@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import "./styles/login.css";
 import useLogin from "../hooks/useLogin";
+import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
-   const { data, loading, error, login } = useLogin();
+   const { data, error, loginHandler } = useLogin();
    const [formData, setFormData] = useState({
       email: "",
       password: ""
@@ -19,16 +20,16 @@ const LoginForm = () => {
    const handleSubmit = async (e) => {
       e.preventDefault();
       console.log("Datos enviados:", formData);
-      await login(formData);
+      await loginHandler(formData);
       if(data != null){
-         console.log(data.access)
+         console.log("data: " + data.access)
          return;
       }
-      console.log(error.message)
+      console.log("error: " + error)
    };
 
    return (
-      <div className='d-flex flex-wrap flex-column gap-2 shadow-lg p-4 rounded bg-gradient'>
+      <div className='container d-flex flex-wrap flex-column gap-2 shadow-lg p-4 rounded bg-gradient'>
          <LoginHeader />
          <form className='d-flex flex-column flex-wrap m-2 gap-2 text-info'
             onSubmit={handleSubmit} required>
@@ -54,7 +55,10 @@ const LoginForm = () => {
                required
             />
 
-            <button type="submit" className="bg-gradient text-info">Submit</button>
+            <button type="submit" className="bg-gradient text-info mb-2">Submit</button>
+            <span role='contentinfo' className='text-center'>
+               <Link to={"/"}>Return to Landing Page</Link>
+            </span>
          </form>
       </div>
    );
@@ -101,8 +105,6 @@ const PasswordInput = ({ placeholder, value, onChange, name, id, required }) => 
             ><i className={visible ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'}
             aria-label={visible ? 'Allows the visibility of the password.' : 'Hiddes the password value.'}></i></button>
          </div>
-
-
       </>);
 }
 
