@@ -1,0 +1,51 @@
+/* Sidebar transition */
+.content {
+  max-width: 10rem;
+  width: 0;
+  overflow: hidden;
+  transition: width .3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.content.open {
+  width: 10rem;
+}
+
+.content.close {
+  width: 0;
+}
+
+/* Items del menú */
+.list-item {
+  cursor: pointer;
+  transition: background-color .25s ease, transform .25s ease;
+  border-radius: 12px;
+}
+
+/* hover más elegante */
+.list-item:hover {
+  background-color: rgba(71, 136, 255, 0.12);
+  transform: translateX(4px);
+}
+
+/* Iconos */
+.list-item i {
+  color: #4788ff;
+  transition: color .3s ease;
+}
+
+.list-item:hover i {
+  color: #1a6bff;
+}
+
+/* Texto con animación suave */
+.menu-text {
+  font-size: 1rem;
+  opacity: 1;
+  transition: opacity .25s ease;
+}
+
+/* Esto oculta el texto cuando el sidebar está cerrado */
+.content.close .menu-text {
+  opacity: 0;
+}

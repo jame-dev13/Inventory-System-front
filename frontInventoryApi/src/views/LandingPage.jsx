@@ -10,11 +10,11 @@ import graphic from "../assets/graphic.webp";
 
 export const LandingPage = () => {
   return (
-    <>
+    <main className='container d-flex flex-column flex-fill gap-2 min-vh-100'>
       <NavBarLandPage />
       <BodyLandPage />
       <Footer />
-    </>
+    </main>
   );
 }
 
