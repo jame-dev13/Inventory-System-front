@@ -1,0 +1,29 @@
+:root{
+   --transform: scale(1.1);
+   --save-color: rgb(35, 75, 255);
+   --close-color: rgb(255, 29, 48);
+   --border-save: 1px outset var(--save-color);
+   --border-close: 1px outset var(--close-color);
+
+}
+
+.save{
+    transition: transform .3s ease;
+}
+
+.save:hover{
+    transform: var(--transform);
+    color: var(--save-color);
+    border: var(--border-save);
+
+}
+
+.close{
+    transition: transform .3s ease;
+}
+
+.close:hover{
+    transform: var(--transform);
+    color: var(--close-color);   
+    border: var(--border-close);
+}

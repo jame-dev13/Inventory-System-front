@@ -1,18 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { SideBar } from '../components/SideBar';
-import { ContentPane } from '../components/ContentPane';
 import "./styles/Home.css";
-import { Navbar } from '../components/Navbar';
-import Footer from "../components/Footer"
+import { EmployeePane } from '../components/panes/EmployeePane';
 
 const Home = () => {
+  const [active, setActive] = useState("Metrics");
+  const components = {
+    "employee": <EmployeePane />
+  }
   return (
     <div className='col'>
         <div className='row min-vh-100'>
           <div className="w-auto bg-gradient">
-            <SideBar />
+            <SideBar active={active} setActive={setActive}/>
           </div>
-          <div className="col">panel</div>
+          <div className="main-pane col">
+            {components[active.toLocaleLowerCase()]}
+          </div>
         </div>
       </div>
   )

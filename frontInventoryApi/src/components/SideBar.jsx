@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import "./styles/sidebar.css"
 
-export const SideBar = () => {
+export const SideBar = ({active, setActive}) => {
    return (
       <aside className='d-block justify-content-center align-content-center'>
-         <Bar />
+         <Bar active = {active} setActive = {setActive}/>
       </aside>
    );
 }
 
-const Bar = () => {
+const Bar = ({ setActive }) => {
    const [open, setOpen] = useState(false);
 
   const handleCollapse = () => setOpen(prev => !prev);
@@ -31,15 +30,14 @@ const Bar = () => {
 
       {/* Contenido colapsable */}
       <section className={`ms-2 mt-3 h-100 content ${open ? "open" : "close"}`}>
-        <BodyBar />
+        <BodyBar setActive = {setActive}/>
       </section>
-
     </article>
   );
 }
 
 
-const BodyBar = () => {
+const BodyBar = ( {setActive} ) => {
    const items = [
       { icon: "fa-solid fa-chart-area", label: "Metrics" },
       { icon: "fa-solid fa-user-tie", label: "Employee" },
@@ -53,7 +51,8 @@ const BodyBar = () => {
       <ul className='list list-unstyled d-flex flex-column gap-2 ms-1 p-2'>
          {
             items.map((item, i) => (
-               <li key={i} className='list-item px-2 px-2 rounded-4'>
+               <li key={i} className='list-item px-2 px-2 rounded-4'
+               onClick={() => setActive(item.label)}>
                   <span className='d-flex align-items-center gap-3 mb-1 p-1'>
                   <i className={`fa-solid ${item.icon} fs-4`}></i>
                   <span className='menu-text'>{item.label}</span>
