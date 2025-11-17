@@ -9,7 +9,7 @@ export const Navbar = () => {
                Inventory System
             </Link>
             <Toggler />
-            <div className="collapse navbar-collapse" id="navbarText">
+            <div className="collapse navbar-collapse mt-2" id="navbarText">
                <UlNav />
             </div>
 
@@ -38,8 +38,8 @@ const UlNav = () => {
    return (
       <ul className="navbar-nav ms-auto mb-lg-0 gap-2">
          <li className="nav-item">
-            <Link className="btn btn-outline-info" to={"/instructive"}>
-               Instructive
+            <Link className="btn btn-outline-info" to={"/guide"}>
+               Guide
             </Link>
          </li>
          <li className="nav-item">

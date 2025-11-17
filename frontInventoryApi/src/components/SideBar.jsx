@@ -40,11 +40,11 @@ const Bar = ({ setActive }) => {
 const BodyBar = ( {setActive} ) => {
    const items = [
       { icon: "fa-solid fa-chart-area", label: "Metrics" },
-      { icon: "fa-solid fa-user-tie", label: "Employee" },
+      { icon: "fa-solid fa-user-tie", label: "Employees" },
       { icon: "fa-brands fa-black-tie", label: "Providers" },
       { icon: "fa-solid fa-boxes-stacked", label: "Products" },
       { icon: "fa-solid fa-handshake-angle", label: "Customers" },
-      { icon: "fa-solid fa-cart-arrow-down", label: "Sale Orders" },
+      { icon: "fa-solid fa-cart-arrow-down", label: "Orders" },
       { icon: "fa-solid fa-hand-holding-dollar", label: "Sales" }
    ]
    return (

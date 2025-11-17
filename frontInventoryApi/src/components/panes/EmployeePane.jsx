@@ -1,17 +1,19 @@
 import React from 'react'
-import { NavBarPane } from '../NavBarPane'
-import { Table } from '../Table'
+import { Pane } from './Pane'
+import { Modal } from '../Modal'
 
 export const EmployeePane = () => {
    const columns = ["id", "name", "salary", "shift", "action"]
-   const data = JSON.parse(
-   '{"id": 2, "name": "jose", "salary": 12000, "shift": "morning"}')
+   const data = [
+      { "id": 2, "name": "jose", "salary": 12000, "shift": "morning" }
+   ]
+
 
    return (
-      <section className='d-flex flex-column gap-2'>
-         <NavBarPane />
-         <Table columns={columns} data={data} />
-      </section>
+      <>
+         <Modal id="editModal" />
+         <Pane columns={columns} data={data} />
+      </>
    )
 }
 

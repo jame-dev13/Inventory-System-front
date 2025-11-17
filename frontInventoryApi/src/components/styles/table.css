@@ -1,0 +1,12 @@
+.col {
+    max-height: 60vh;
+}
+
+
+table{
+    max-height: 30vh;
+    overflow-x: auto;
+    overflow-y: scroll;
+    table-layout: fixed;
+    width: 100%;
+}

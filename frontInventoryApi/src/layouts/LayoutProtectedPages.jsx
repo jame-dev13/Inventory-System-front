@@ -5,14 +5,14 @@ import Footer from "../components/Footer"
 
 export const LayoutProtectedPages = () => {
   return (
-    <div className='row flex-column'>
-      <div className='col'>
+    <>
+      <div className='row g-0'>
         <Navbar />
       </div>
       <Outlet />
-      <div className='col'>
+      <div className='row g-0'>
         <Footer />
       </div>
-    </div>
+    </>
   )
 }

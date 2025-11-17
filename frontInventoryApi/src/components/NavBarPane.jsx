@@ -3,7 +3,7 @@ import { Modal } from './Modal';
 
 export const NavBarPane = () => {
    return (
-      <nav className="navbar navbar-expand-lg bg-body-secondary rounded">
+      <nav className="navbar navbar-expand-lg bg-body-secondary rounded mb-3">
          <div className="container-fluid">
             <a className="navbar-brand" href="#">
                <i className="fa-solid fa-arrow-rotate-right"></i>
